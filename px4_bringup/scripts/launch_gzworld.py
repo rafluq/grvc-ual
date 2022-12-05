@@ -93,7 +93,7 @@ def main():
         server = subprocess.Popen('gnome-terminal -- ' + server_args, cwd=temp_dir, \
                                             env=gz_env, shell=True, preexec_fn=os.setsid)
 
-    # Sta(rt gazebo client
+    # Start gazebo client
     if not str_to_bool(args.gazebo_headless):
         time.sleep(0.2)
         client_args = "rosrun gazebo_ros gzclient __name:=gazebo_gui"

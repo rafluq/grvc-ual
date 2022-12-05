@@ -53,6 +53,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <arg name="robot_model" value="$(arg robot_model)"/>
     </include>
 
+    <node pkg="ual_backend_mavros" name="goal_pose_listener"  type="goal_pose_listener.py" output="screen"/> 
+
     <group if="$(arg multi)">
         <!-- Launch robot id=1 -->
         <include file="$(find px4_bringup)/launch/spawn_robot.launch" ns="$(arg ns_prefix)1">
