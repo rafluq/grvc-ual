@@ -19,13 +19,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <arg name="mode" default="sitl"/>
     <arg name="robot_model" default="mbzirc"/>
 
-    <arg name="pose_frame_id" default=""/><!-- To publish ual/pose in other frame than local, e.g. map -->
+    <arg name="pose_frame_id" default="map"/><!-- To publish ual/pose in other frame than local, e.g. map -->
     <arg name="mavros_offboard_rate" default="30.0"/>
     <arg name="position_th" default="0.33"/>
     <arg name="orientation_th" default="0.65"/>
     <arg name="hold_pose_time" default="3.0"/>
 
-    <arg name="gazebo_headless" default="false"/> <!--Gazebo headless rendering-->
+    <arg name="gazebo_headless" default="true"/> <!--Gazebo headless rendering-->
 
     <group if="$(eval mode=='sitl')">
         <!-- Launch Gazebo simulation -->
@@ -103,7 +103,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         <param name="pose_frame_id" value="$(arg pose_frame_id)"/>
         <param name="home_pose_parent_frame" value="map"/><!-- default= map -->
         <!-- Define home pose relative to global map frame -->
-        <rosparam param="home_pose">[0, 0, 0]</rosparam><!-- [x,y,z] -->
+        <rosparam param="home_pose">[15.0, -15.0, 0]</rosparam><!-- [x,y,z] -->
         <!-- Define the global map frame geo position and let the UAL estimate the relative home pose -->
         <!-- <rosparam param="map_origin_geo">[37.558542, -5.931074, 7.89]</rosparam> --><!-- [lat,lon,alt] -->
     </node>

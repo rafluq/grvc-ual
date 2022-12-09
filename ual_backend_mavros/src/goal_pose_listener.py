@@ -14,7 +14,7 @@ class SetPosePublisher(object):
         goal = PoseStamped()
         goal.header.seq = 1
         goal.header.stamp = rospy.Time.now()
-        goal.header.frame_id = "odom"
+        goal.header.frame_id = "map"
         goal.pose.position.x = msg.position.x
         goal.pose.position.y = msg.position.y
         goal.pose.position.z = msg.position.z
